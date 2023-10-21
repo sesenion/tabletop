@@ -42,7 +42,7 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    "debug_toolbar",
+    # "debug_toolbar",
     "board",
     "rest_framework",
 ]
@@ -90,8 +90,8 @@ DATABASES = {
         "NAME": "tabletop",
         "USER": str(os.getenv("DB_USER")),
         "PASSWORD": str(os.getenv("DB_PASSWORD")),
-        "HOST": "127.0.0.1",
-        "PORT": "5432",
+        "HOST": str(os.getenv("DB_HOST")),
+        "PORT": str(os.getenv("DB_POrt")),
     }
 }
 
@@ -117,9 +117,9 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
 
-LANGUAGE_CODE = "en-us"
+LANGUAGE_CODE = "de-de"
 
-TIME_ZONE = "UTC"
+TIME_ZONE = "Europe/Berlin"
 
 USE_I18N = True
 
