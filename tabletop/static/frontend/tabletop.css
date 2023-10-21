@@ -1,0 +1,17 @@
+.playing-field{
+    position:relative;
+    background-color: #dddddd;
+    height:4000px;
+    width: 100%;
+}
+
+.sprite{
+    position: absolute;
+    height:100px;
+    width:200px;
+    background-color: aqua;
+}
+
+.sprite:hover{
+    cursor:grab;
+}
