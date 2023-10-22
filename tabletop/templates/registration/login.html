@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 
-{% block body %}
+{% block 'body' %}
 
 {% if form.errors %}
 <p>Your username and password didn't match. Please try again.</p>
@@ -15,7 +15,7 @@
 {% endif %}
 {% endif %}
 
-<h1>Login to ofua</h1>
+<h1>Login to the tabletop app</h1>
 <form method="post" action="{% url 'login' %}">
     {% csrf_token %}
     <table>

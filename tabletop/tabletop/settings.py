@@ -162,3 +162,7 @@ INTERNAL_IPS = [
 ]
 
 CSRF_TRUSTED_ORIGINS = ["https://sesenion.de", "https://tabletop.sesenion.de"]
+
+
+LOGIN_REDIRECT_URL = "/"
+LOGOUT_REDIRECT_URL = "/"
