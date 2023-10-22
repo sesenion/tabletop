@@ -30,7 +30,12 @@ SECRET_KEY = str(os.getenv("SECRET_KEY"))
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = str(os.getenv("TABLETOP_DEBUG")).lower() == "true"
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    "127.0.0.1",
+    "localhost",
+    "sesenion.de",
+    "tabletop.sesenion.de",
+]
 
 
 # Application definition
@@ -58,6 +63,7 @@ MIDDLEWARE = [
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
     # "debug_toolbar.middleware.DebugToolbarMiddleware",
 ]
+
 
 ROOT_URLCONF = "tabletop.urls"
 
@@ -91,7 +97,7 @@ DATABASES = {
         "USER": str(os.getenv("DB_USER")),
         "PASSWORD": str(os.getenv("DB_PASSWORD")),
         "HOST": str(os.getenv("DB_HOST")),
-        "PORT": str(os.getenv("DB_POrt")),
+        "PORT": str(os.getenv("DB_PORT")),
     }
 }
 
@@ -130,7 +136,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = "static/"
-STATIC_ROOT = BASE_DIR / "staticfiles"
+STATIC_ROOT = BASE_DIR.parent / "staticfiles"
 
 STATICFILES_DIRS = [
     BASE_DIR / "static",
@@ -154,3 +160,5 @@ INTERNAL_IPS = [
     "127.0.0.1",
     # ...
 ]
+
+CSRF_TRUSTED_ORIGINS = ["https://sesenion.de", "https://tabletop.sesenion.de"]
